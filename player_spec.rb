@@ -1,10 +1,7 @@
 require 'rspec'
 require_relative './player'
 
-describe 'Player' do
-  describe 'bet_request' do
-    it 'returns 200' do
-      game = JSON.generate({
+game = {
         "tournament_id" => "550d1d68cd7bd10003000003",     
         "game_id" =>"550da1cb2d909006e90004b1",
         "round" =>0,                                      
@@ -66,7 +63,11 @@ describe 'Player' do
                 "suit" => "clubs"
             }
         ]
-      })
+      }
+
+describe 'Player' do
+  describe 'bet_request' do
+    it 'returns 200' do
       expect(Player.new.bet_request(game)).to eq 200
     end
   end
