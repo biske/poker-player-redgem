@@ -9,9 +9,9 @@ class Player
     game_state = JSON.parse(game_state)
 
     
-    my_hole_cards = game_state["players"][1]["hole_cards"]
+    my_hole_cards = game_state["players"][game_state["in_action"]]["hole_cards"]
 
-    if my_hole_cards[0]["rank"] == my_hole_cards[1]["rank"]
+    if (my_hole_cards[0]["rank"] == my_hole_cards[1]["rank"]) or (my_hole_cards[0]["suit"] == my_hole_cards[1]["suit"])
       500
     else
       200
