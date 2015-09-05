@@ -17,7 +17,7 @@ class Player
     
     puts "index: #{index.inspect}"
 
-    index * 1000
+    (index * 1000).to_i
   end
 
   def showdown(game_state)
