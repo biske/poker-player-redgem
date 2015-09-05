@@ -6,9 +6,10 @@ class Player
   VERSION = "Default Ruby folding player"
 
   def bet_request(game_state)
-    game_state = JSON.parse(game_state)
-
+    puts game_state.class.inspect
     puts game_state.inspect
+    
+    # game_state = JSON.parse(game_state)
 
     my_hole_cards = game_state["players"][game_state["in_action"]]["hole_cards"]
 
