@@ -68,7 +68,7 @@ game = {
 describe 'Player' do
   describe 'bet_request' do
     it 'returns 200' do
-      expect(Player.new.bet_request(game)).to eq 200
+      expect(Player.new.bet_request(game)).to eq 1113
     end
   end
 end

@@ -11,15 +11,13 @@ class Player
   def bet_request(game_state)
     puts game_state.class.inspect
     puts game_state.inspect
-    
-    my_hole_cards = game_state["players"][game_state["in_action"]]["hole_cards"]
 
+    me = game_state["players"][game_state["in_action"]]
+    card1 = me["hole_cards"][0]
+    card2 = me["hole_cards"][1]
 
-    if GOOD_CARDS.include?(my_hole_cards[0]["rank"]) or GOOD_CARDS.include?(my_hole_cards[1]["rank"])
-      game_state["current_buy_in"] - game_state["players"][game_state["in_action"]]["bet"] + game_state["small_blind"]
-    else
-      500
-    end
+    index = CardCombinations.new(card1, card2).calculate_index
+    index * me["stack"]  
   end
 
   def showdown(game_state)
