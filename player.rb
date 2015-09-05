@@ -17,6 +17,10 @@ class Player
     card2 = me["hole_cards"][1]
 
     index = CardCombinations.new(card1, card2).calculate_index
+    
+    puts index.inspect
+    puts me["stack"]
+
     index * me["stack"]  
   end
 
