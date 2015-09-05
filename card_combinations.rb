@@ -21,19 +21,19 @@ class CardCombinations
 
   def calculate_index
     if one_pair?
-      return @goodness_index = 1
+      return @goodness_index = 0.8
     end
 
     if two_goods?
-      return @goodness_index = 0.9
+      return @goodness_index = 0.7
     end
     
     if good?(@card1)
-      return @goodness_index = 0.7
+      return @goodness_index = 0.4
     end
 
     if good?(@card2)
-      return @goodness_index = 0.7
+      return @goodness_index = 0.4
     end
 
     return @goodness_index = 0.1
