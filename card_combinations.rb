@@ -29,11 +29,11 @@ class CardCombinations
     end
     
     if good?(@card1)
-      return @goodness_index = 0.4
+      return @goodness_index = 0.2
     end
 
     if good?(@card2)
-      return @goodness_index = 0.4
+      return @goodness_index = 0.2
     end
 
     return @goodness_index = 0.1
